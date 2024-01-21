@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* animation = animasi pada element html, pergerakan animasinya disebut keyframes */
+      /* mirip seperti transition yang memberdakan hanya keadaan awal dan keadaan akhir */
+      /* contoh penulisan keyframes / pergerakan animasi =
+      @keyframes name {
+        from {
+            property-css
+        }
+        to {
+            property-css
+        }
+      }
+      */
+      /* value animation = name, duration, timing-function, delay, iteration-count, direction, fill-mode, play-state */
+      /* 
+            name= wajib ada, name dari keyframes / pergerakan animasi nya
+            duration = s / ms, wajib diisi, waktu untuk menjalankan animasi
+            timing-function = pergerakan saat menggunakan transisi
+            delay = s / ms, waktu tunggu sebelum menjalankan animasi
+            iteration-count = angka / infiniti, animasi berulang ulang sesuai angka atau infiniti(tak akan habis), default = 1
+            direction = pergerakan awal - akhir, kebalikannya, & pergabungannya, default = normal
+            fill-mode = menentukan pergerakan akhir dari animasi, default = none
+            play-state = untuk javascript, biasanya memberhentikan atau memulai animasi, default = running
+       */
+      /* direction terdiri dari = normal, reverse, alternative, alternative-reverse
+      normal = default (pergerakan dari awal ke pergerakan akhir)
+      reverse = pergerakan dari akhir ke pergerakan awal
+      alternative = pergabungan dari awal - akhir, lalu akhir - awal
+      alternative-reverse = pergabungan dari akhir - awal, lalu awal - akhir
+      */
+      /* 
+      fill-mode terdiri dari = none, forwards, backwards, both
+      none = default (berubah ke posisi awal walau tanpa animasi)
+      forwards = akan berhenti di posisi akhir, tanpa mengubah bentuk posisi akhir
+      backwards = sama seperti none
+      both = sama seperti fordwards
+      */
+      /* play-state terdiri dari = running, pause
+      running = default(akan berjalan)
+      pause = tidak akan berjalan, kecuali jka di ubah menggunaka javascript ke running
+      */
+      .kotak {
+        width: 200px;
+        height: 200px;
+        background-color: salmon;
+        /* jika menggunakan transition */
+        /* transition: 1s; */
+        /* jika ingin animasinya langsung berjalan */
+        animation: animasikotak 2s ease 3 alternate forwards;
+      }
+      .kotak:hover {
+        /* width: 500px; */
+        /* jika menggunakan animasi, tetapi hanya melakukan 1 kali animasi, lalu kembali lagi ke posisi awal */
+        /* animation: animasikotak 2s ease; */
+      }
+      @keyframes animasikotak {
+        /* biasanya menggunakan percentage, bukan from & to */
+        /* pergerakan akal */
+        0% {
+          width: 200px;
+        }
+
+        50% {
+          width: 400px;
+          height: 200px;
+        }
+
+        /* pergerakan akhir */
+        100% {
+          width: 500px;
+          height: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kotak"></div>
+  </body>
+</html>

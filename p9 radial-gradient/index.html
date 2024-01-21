@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* radial-gradient = memberikan gradasi warna secara garis melingkar / lingkaran */
+      /* radial-gradient bukan properti, tetapi value dari background-image / border-image */
+      /* urutannya dari titik pusat akan berurutan sesuai value awal sampe akhir */
+      /* contoh = background-image: radial-gradient(red, green, blue); */
+
+      /* color stop = untuk membesarkan besaran warnanya, agar tidak sama semua */
+      /* contoh = background-image: radial-gradient(red 64%, green 80%); */
+
+      /* sintax lengkap radial-gradient = 
+        background-image: radial-gradient(
+          tipe jangkauan at posisi-y posisi-x, warna1, warna2, warna-n
+        );
+        valuenya tipe = ellipse (default) & circle (lingkaran sempurna)
+        jangkauan = jarak dari pusat gradient kesisi terluar nya
+        value jangkauan = closest-corner (sudut terdekat), closest-side (sisi terdekat), 
+        farthest-corner (sudut terjauh), farthest-side(sisi terjauh)
+        contoh nya = radial-gradient(circle closest-side, red, green);
+
+        posisi = untuk memindahkan pusat gradient, posisi-x(horizontal) & posisi-y(vertikal)
+        value posisi-x = left, center, right, px
+        value posisi-y = top, center, bottom, px
+      */
+      div {
+        width: 600px;
+        height: 300px;
+        margin: 50px auto;
+        background-color: aqua;
+        background-image: radial-gradient(circle farthest-side at top left, red, blue);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

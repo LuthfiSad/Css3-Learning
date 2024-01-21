@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* properti box-shadow part 2 secara berurut = inset, x-offset, y-offset, blur, spread, color */
+      /* inset = akan mengubah shadownya berada di dalam, bukan di luar */
+      /* spread = untuk menambahkan size shadow secara horizontal dan vertikal */
+      div {
+        text-align: center;
+        width: 300px;
+        height: 300px;
+        background-color: #39b54a;
+        margin: 50px auto;
+        /* contoh spread */
+        /* jika x, y offset tidak di berikan nilai maka akan seperti border */
+        box-shadow: 0px 30px 10px -20px rgba(0, 0, 0, 0.75);
+        transition: 0.3s;
+      }
+      div.satu:hover {
+        box-shadow: 0px 80px 10px -40px rgba(0, 0, 0, 0.15);
+        margin-top: 40px;
+      }
+      .inset {
+        /* contoh inset */
+        box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+      }
+      /* untuk menggunakan 2 / lebih box-shadow pada element */
+      .multipleshadow {
+        box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.5), -5px -5px 5px rgba(0, 0, 255, 0.5);
+      }
+      .multipleshadow2 {
+        box-shadow: 0 0 0 5px red, 0 0 0 10px green, 0 0 0 15px yellow, 0 0 0 20px orange, 0 0 0 25px blue;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="satu"><h1>Spread</h1></div>
+    <div class="inset"><h1>Inset</h1></div>
+    <div class="multipleshadow"><h1>Multiple Shadow</h1></div>
+    <div class="multipleshadow2"><h1>Multiple Shadow2</h1></div>
+  </body>
+</html>

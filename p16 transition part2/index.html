@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* transition = merubahkan property HTML "SECARA HALUS" */
+      /* mirip seperti animation yang memberdakan hanya keadaan awal dan keadaan akhir */
+      /* value transition: property, durasi(wajib), fungsi, delay */
+      /* 
+          property = property apa saja yang akan di transisi, defaultnya = all;
+          durasi = s / ms, wajib diisi, waktu untuk merubah ke keadaan terakhir
+          fungsi = disebut timing function, pergerakan saat menggunakan transisi
+          delay = s / ms, waktu tunggu sebelum menjalankan transisi
+      */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 900px;
+        margin: 10px auto;
+        border: 5px solid black;
+        text-align: center;
+      }
+      .kotak {
+        width: 100px;
+        height: 100px;
+        background-color: salmon;
+        margin: 5px 0;
+      }
+
+      /* fungsi terdiri dari = ease, ease-in, ease-out, ease-in-out, linear, cubic-bezier(w, x, y, z) */
+      /* yang membedakan dari semua hanya kecepatan awal dan akhir */
+      .kotak1 {
+        /* ease = default */
+        transition: 4s;
+      }
+      .kotak2 {
+        /* ease-in = pergerakan awalnya lama, akhirnya cepet */
+        transition: 4s ease-in;
+      }
+      .kotak3 {
+        /* ease-out = pergerakan awalnya cepet, akhirnya lama */
+        transition: 4s ease-out;
+      }
+      .kotak4 {
+        /* ease-in-out = pergerakan awalnya lambat, akhir lambat */
+        transition: 4s ease-in-out;
+      }
+      .kotak5 {
+        /* linear = pergerakannya lurus */
+        transition: 4s linear;
+      }
+      .kotak6 {
+        /* cubic-bezier = berbeda dari yang lain, harus punya 4 angka, bisa di ubah di inspect */
+        transition: 4s cubic-bezier(0, -0.4, 1, 1.4);
+      }
+      .container:hover .kotak {
+        transform: rotate(720deg);
+        margin-left: 800px;
+        background-color: blue;
+      }
+
+      /* delay */
+      .kotak7 {
+        background-color: blue;
+        /* contoh delay, artinya tunggu 2 detik sebelum melakukan 3 detik transisi */
+        transition: 3s 2s;
+      }
+      .container:hover .kotak7 {
+        transform: rotate(720deg);
+        margin-left: 700px;
+        background-color: red;
+      }
+
+      /* Multiple */
+      .kotak8 {
+        background-color: cyan;
+        transition: margin-left 3s, transform 3s 2s, background-color 3s 3s, color 1s 4s;
+      }
+      .container:hover .kotak8 {
+        transform: rotate(720deg);
+        margin-left: 700px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="kotak kotak7">Delay</div>
+      <div class="kotak kotak8">Multiple</div>
+      <div class="kotak kotak1">fungsi ease</div>
+      <div class="kotak kotak2">fungsi ease-in</div>
+      <div class="kotak kotak3">fungsi ease-out</div>
+      <div class="kotak kotak4">fungsi ease-in-out</div>
+      <div class="kotak kotak5">fungsi linear</div>
+      <div class="kotak kotak6">fungsi cubic-bezier</div>
+    </div>
+  </body>
+</html>

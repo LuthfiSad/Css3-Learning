@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url(./kacamata.jpg);
+        background-size: cover;
+        background-position: 50% 35%;
+        display: flex;
+      }
+      .satu {
+        width: 300px;
+        height: 300px;
+        background-color: #f60;
+        opacity: 0.5;
+        position: relative;
+      }
+      .dua {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        right: -50px;
+        bottom: -50px;
+        /* agar class satu menjadi opacity */
+        opacity: 0.5;
+      }
+      .tiga {
+        margin-left: auto;
+        width: 300px;
+        height: 300px;
+        background-color: #f60;
+        opacity: 0.5;
+        position: relative;
+      }
+      .empat {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        left: -50px;
+        bottom: -50px;
+        /* fakta opacity = akan tetap transparan jika parent nya transparan */
+        /* harus menggunakan element rgba agar tidak transparan */
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="satu">
+      <div class="dua"></div>
+    </div>
+    <div class="tiga">
+      <div class="empat"></div>
+    </div>
+  </body>
+</html>

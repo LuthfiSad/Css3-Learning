@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* rgba = red, green, blue, alpha; */
+      /* hsla = hue, saturation, lightness, alpha; */
+
+      body {
+        background-image: url(./kacamata.jpg);
+        background-size: cover;
+        background-position: 50% 35%;
+      }
+      .satu {
+        width: 300px;
+        height: 300px;
+        background-color: #f60;
+        position: relative;
+        /* tanpa opacity tetapi menggunakan rgba, alpha nya yang di gunakan */
+        /* opacity: 0.5; */
+
+        /* jika menggunakan rgba, nilai akhir adalah opacity nya */
+        background-color: rgba(255, 102, 0, 0.4);
+        /* jika menggunakan hlsa = */
+        /* background-color: hsla(24, 100%, 63%, 0.4); */
+      }
+      .dua {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        right: -50px;
+        bottom: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="satu">
+      <div class="dua"></div>
+    </div>
+  </body>
+</html>

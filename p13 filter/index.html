@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* filter = memberikan efek visual pada gambar, background, atau border */
+      /* value filter = blur(), brightness(), contrast(), saturate(), grayscale(),
+      sepia(), hue-rotate(), invert(), opacity(), drop-shadow() */
+      body {
+        text-align: center;
+      }
+      /* filter:
+            blur( px ) = blurnya, semakin besar angkanya semakin blur
+            brightness( nilai, % ) = kecerahannya, default 1, 100%, semakin kecil, semakin gelap
+            contrast( nilai, % ) = kejelasan, default 1, 100%
+            saturate( nilai, % ) = berwarna, default 1, 100%, semakin kecil, warna semakin hilang
+            grayscale( nilai, % ) = abu", default 0, 0%, semakin besar, semakin abu" warnanya
+            sepia( nilai, % ) = kuning", default 0, 0%, semakin besar, semakin kuning" warnanya
+            hue-rotate( deg ) = memutar roda warna sebesar derajat, default 0deg
+            invert( nilai, % ) = hitamputih, default 0, 0%, ditengah(50%) menjadi abu", semakin besar menjadi hitamputih
+            opacity( nilai, % ) = transparan, default 1, 100%, semakin kecil, semakin transparan
+            drop-shadow( sama seperti box-shadow )
+      */
+      img:nth-child(1) {
+        /* bisa menggunakan 2 value / lebih */
+        filter: blur(5px) grayscale(100%);
+        transition: 1s;
+      }
+      img:nth-child(1):hover {
+        filter: blur(0) grayscale(0);
+      }
+      /* kehebatan filter: drop-shadow = bisa menggunakan di text, maupun di box, tanpa box-shadow & text-shadow */
+      img:nth-child(2) {
+        /* bisa shadow bukan di kotaknya, tetapi di text logo nya */
+        margin-top: 50px;
+        filter: drop-shadow(5px 5px 3px black);
+        /* akan shadow di kotaknya */
+        /* box-shadow: 5px 5px 3px black; */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="g1.jpg" alt="Laptop Gemink" />
+    <img width="50%" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Samsung_Galaxy_S7_logo.svg" alt="" />
+  </body>
+</html>

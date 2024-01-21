@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* transition = merubahkan property HTML "SECARA HALUS" */
+      /* mirip seperti animation yang memberdakan hanya keadaan awal dan keadaan akhir */
+      /* value transition: property, durasi(wajib), fungsi, delay */
+      /* 
+          property = property apa saja yang akan di transisi, defaultnya = all;
+          durasi = s / ms, wajib diisi, waktu untuk merubah ke keadaan terakhir
+          fungsi = disebut timing function, pergerakan saat menggunakan transisi
+          delay = s/ ms, waktu tunggu sebelum menjalankan transisi
+      */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 900px;
+        margin: 10px auto;
+        border: 5px solid black;
+        text-align: center;
+      }
+
+      /* keadaan awal / sebelum perubahan */
+      .kotak {
+        width: 100px;
+        height: 100px;
+        background-color: salmon;
+        margin: 10px 0;
+      }
+
+      /* durasi (value wajib) */
+      .kotak1 {
+        /* contoh transition durasi */
+        transition: 1s;
+      }
+
+      /* keadaan akhir / perubahan */
+      .container:hover .kotak1 {
+        transform: rotate(180deg);
+        margin-left: 800px;
+        background-color: blue;
+      }
+
+      /* property */
+      /* tidak semua property bisa di transisi
+      contoh yang tidak bisa = font-family, display, position, dll */
+      .kotak2 {
+        /* contoh property, jika tidak di beri nilai maka default nya = all */
+        /* hanya berubah warna & transform saja yang transisi,  untuk margin / pindah tidak ada transisi */
+        transition: background-color, transform 1s;
+      }
+      .container:hover .kotak2 {
+        transform: rotate(720deg);
+        margin-left: 700px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="kotak kotak1">durasi</div>
+      <div class="kotak kotak2">property</div>
+    </div>
+  </body>
+</html>

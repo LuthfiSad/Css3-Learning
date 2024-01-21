@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* linear-gradient = memberikan gradasi warna secara garis lurus */
+      /* linear-gradient bukan properti, tetapi value dari background-image / border-image */
+      /* urutannya akan berurutan sesuai value awal sampe akhir */
+      /* contoh = background-image: linear-gradient(red, green, blue); */
+      /* agar mengatur posisi arahnya hanya menambahkan sudut atau arah di depan warna */
+      /* default nya yaitu = sudut: 180deg, arah: to bottom */
+      /* contoh = background-image: linear-gradient(-90deg, red, green); artinya akan muter -90 derajat */
+      /* nilai diagonal / miringnya = 45deg, 135deg dll */
+      /* contoh = background-image: linear-gradient(to top, red, green); artinya secara berurut keatas warnanya */
+      /* nilai diagonal / miringnya = to left top, top right top, dll */
+
+      /* color stop = untuk membesarkan besaran warnanya, agar tidak sama semua */
+      /* contoh = background-image: linear-gradient(red 64%, green 80%); */
+      div {
+        width: 600px;
+        height: 300px;
+        margin: 50px auto;
+        background-color: salmon;
+        /* contoh linear-gradient */
+        background-image: linear-gradient(to top left, red 20%, #f0d606 50%, rgba(0, 255, 255, 1) 60%, green 90%);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

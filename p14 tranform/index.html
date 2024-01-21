@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* transform = memanipulasi format visual dari element HTML, seperti ukuran, bentuk, posisi, dll */
+      /* folder ini hanya menjelaskan Transform 2D */
+      /* value transform = scale, rotate, skew, translate */
+      /* scale() = memperbesar & memperkecil size / ukuran */
+      /* rotate() = memutar */
+      /* skew() = membuat miring / condong */
+      /* translate() = mengubah posisi */
+      /*  */
+      p {
+        font-size: 28px;
+        text-align: center;
+      }
+      /* 
+          scale(angka), scaleX(angka), scaleY(angka)
+          rotate(deg), rotateX(deg), rotateY(deg)
+          skew(deg), skewX(deg), skewY(deg)
+          translate(px), translateX(px), translateY(px)
+
+          X = horizontal, Y = vertikal
+      */
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .kotak1 {
+        transition: 0.5s;
+      }
+      .kotak1:hover {
+        /* perbesar ukuran X, Y sebesar 1.5x lipat */
+        /* transform: scale(1.5); */
+        /* perbesar ukuran X sebesar 2x lipat, Y sebesar 1.5x lipat */
+        /* transform: scale(2, 1.5); */
+        /* atau seperti ini */
+        transform: scaleX(2) scaleY(1.5);
+      }
+
+      .kotak2 {
+        transition: 5s;
+      }
+      .kotak2:hover {
+        /* putaran positif = X : kebawah, Y : kekiri */
+        /* putar searah jarumnya sebesar 360 derajat, jika berlawanan nilainya negative */
+        /* transform: rotate(360deg); */
+        /* putar 90 derajat secara vertikal terhadap sumbu X */
+        /* transform: rotateX(90deg); */
+        /* putar 180 derajat secara vertikal terhadap sumbu X, 180 derajat horizontal terhadap sumbu Y */
+        transform: rotateX(180deg) rotateY(180deg);
+      }
+
+      .kotak3 {
+        transition: 0.5s;
+      }
+      .kotak3:hover {
+        /* miring positif = X : atas kekiri, bawah kekanan & Y : kiri keatas, kanan kebawah */
+        /* skewX = skew = miring secara horizontal */
+        /* miring 30 derajat secara horizontal */
+        /* transform: skew(30deg); */
+        /* miring -30 derajat secara vertikal */
+        /* transform: skewY(-30deg); */
+        /* miring 30 derajat horizontal, 30 derajat vertikal secara bersamaan */
+        transform: skew(30deg) skewY(-30deg);
+      }
+
+      .kotak4 {
+        transition: 0.5s;
+      }
+      .kotak4:hover {
+        /* pindah positif = X : kekanan & Y : kebawah */
+        /* translateX = translate = pindah secara horizontal */
+        /* pindahkan sebesar 50px kekanan */
+        /* transform: translate(50px); */
+        /* pindahkan sebesar 50px keatas */
+        /* transform: translateY(-50px); */
+        /* pindahkan sebesar 50px kekiri, 50px kebawah */
+        /* transform: translate(-50px) translateY(50px); */
+        transform: translate(-50px, 50px);
+      }
+
+      .multi {
+        transition: 5s;
+      }
+      .multi:hover {
+        /* sama seperti filter, bisa menggunakan 2 value atau lebih */
+        transform: scale(1.5) rotateX(-360deg) rotateY(360deg) translate(-50px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kotak1"><h1>Scale</h1></div>
+    <div class="kotak2"><h1>Rotate</h1></div>
+    <div class="kotak3"><h1>Skew</h1></div>
+    <div class="kotak4"><h1>Translate</h1></div>
+    <div class="multi"><h1>Multi</h1></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat optio doloremque nisi sunt dolor magni, dolore est nobis minima.</p>
+  </body>
+</html>
